@@ -5,8 +5,8 @@
 }
 
 :root {
-    --font-heading: 'Playfair Display', serif; /* For headings */
-    --font-body: 'Quicksand', sans-serif; /* For body text */
+    --font-heading: 'Montserrat', sans-serif; /* For headings */
+    --font-body: 'Montserrat', sans-serif; /* For body text */
     --color-bg1: #FFE6E6;  /* Soft Blush */
     --color-bg2: #FFC2C2;  /* Light Pink */
     --color1: #FFB3B3;     /* Soft Pink */
@@ -28,7 +28,7 @@ body {
         var(--color4) 100%);
     background-attachment: fixed;
     color: var(--color5);
-    font-family: 'Georgia', serif; /* Romantic serif font */
+    font-family: var(--font-body);
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -115,7 +115,7 @@ h3 {
 .main-wrapper {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px;
     gap: 24px;
@@ -200,6 +200,25 @@ h3 {
     align-items: center;
     max-width: 640px;
     width: 100%;
+    position: relative;
+}
+
+.heart-stamp {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(160px, 45vw);
+    height: auto;
+    z-index: 2;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    animation: stampIn 0.5s ease-out;
+}
+
+.heart-stamp img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* 3D Box */
@@ -309,7 +328,7 @@ h3 {
 
 .love-text {
     font-size: clamp(1.6rem, 4vw, 2.5rem);
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font-body);
     font-weight: bold;
     color: var(--color5); /* Warm Pink */
     text-align: center;
@@ -322,48 +341,64 @@ h3 {
     margin-top: 10px;
     display: block;
 }
-/* Style for the mute button */
-#mute-button {
-    background-color: var(--color5);
-    color: white;
+@keyframes stampIn {
+    0% {
+        transform: translateX(-50%) scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.card-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.card {
+    position: relative;
+    width: min(520px, 92vw);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 28px 26px 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: var(--color5);
+}
+
+.card h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: clamp(1rem, 2.4vw, 1.1rem);
+    margin-bottom: 12px;
+}
+
+.card-sign {
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.card-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
+    background: transparent;
+    font-size: 1.6rem;
     cursor: pointer;
-    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
-    font-size: 1rem;
-}
-
-#mute-button:hover {
-    background-color: var(--color5);
-    transform: scale(1.05);
-}
-
-#volume-slider {
-    width: 100%;
-    margin-top: 10px;
-    -webkit-appearance: none;
-    background: linear-gradient(to right, #A7D397, #8BBF77);
-    height: 5px;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-}
-
-/* Style for the slider thumb */
-#volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background: white;
-    border: 2px solid #8BBF77;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-#volume-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
+    color: var(--color5);
 }
 
 /* Footer */

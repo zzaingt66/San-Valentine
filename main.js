@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById('background-music');
-    const muteButton = document.getElementById('mute-button');
-    const volumeSlider = document.getElementById('volume-slider');
-    const icon = muteButton.querySelector("i");
-    const videoCard = document.querySelector(".aside.left"); // Video card
-    const video = videoCard.querySelector("video"); // Get video element
     const clickButton = document.querySelector(".click-box button");
     const choiceBox = document.querySelector(".choice-box");
     const threedBox = document.querySelector(".threed-box");
     const questionText = document.querySelector(".question-box h1");
     const yesButton = document.querySelector(".choice-box button:first-child");
     const noButton = document.querySelector(".choice-box button:last-child");
+    const heartStamp = document.querySelector(".heart-stamp");
+    const cardOverlay = document.getElementById("card-overlay");
+    const cardClose = document.querySelector(".card-close");
 
-    let partnerName = "JILLIAN"; // Replace with dynamic value
+    let partnerName = "Gisel"; // Reemplaza con el nombre de tu pareja
     let noClickCount = 0; // Counter for No button clicks
 
     // Function to create typewriter effect
@@ -35,10 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function revealChoices() {
         audio.pause(); // Stop background music
         audio.currentTime = 0; // Reset music
-
-        videoCard.classList.remove("hide"); // Show video card
-        video.play(); // Play the funny video
-
         clickButton.style.display = "none"; // Hide the button
         choiceBox.classList.remove("hide"); // Show Yes/No options
 
@@ -48,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Start typewriter effect for the second line
         const typedTextElement = document.querySelector(".typed-text");
         setTimeout(() => {
-            typeWriterEffect(typedTextElement, "Will you be my Valentine?");
+            typeWriterEffect(typedTextElement, "Quieres ser mi San Valentin?");
         }, 500); // Delay to allow smooth transition
     }
 
@@ -75,9 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     yesButton.addEventListener("click", function () {
-        questionText.innerHTML = `<span class="partner-name">${partnerName}</span><br><span class="love-text">I love you baby ❤️</span>`;
+        questionText.innerHTML = `<span class="partner-name">${partnerName}</span><br><span class="love-text">Te quiero mucho ❤️</span>`;
         choiceBox.style.display = "none"; // Hide choices
         threedBox.classList.remove("hide");
+        heartStamp.classList.remove("hide");
+        cardOverlay.classList.remove("hide");
+        cardOverlay.setAttribute("aria-hidden", "false");
 
         createHearts();
     });
@@ -97,9 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
             yesButton.style.padding = `${newYesSize / 2}px ${newYesSize}px`;
         } else {
             noButton.style.display = "none"; // Hide No button after 5 clicks
-            questionText.innerHTML += `<br><span class="no-choice-text">Did you really think you had a choice? 🤭</span>`;
+            questionText.innerHTML += `<br><span class="no-choice-text">De verdad creiste que tenias opcion? 🤭</span>`;
         }
     });
 
     clickButton.addEventListener("click", revealChoices);
+
+    cardClose.addEventListener("click", function () {
+        cardOverlay.classList.add("hide");
+        cardOverlay.setAttribute("aria-hidden", "true");
+    });
 });

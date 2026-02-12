@@ -1,78 +1,78 @@
-# 💖 Valentine's Day Web Project
+# 💖 Proyecto Web de San Valentin
 
-I just had to create one of these, It was so fun!
+Tenia que hacer uno de estos. Fue muy divertido.
 
-A fun, interactive web app with a **glassmorphism** aesthetic, designed to send a personalized valentine question to someone special. The app includes smooth animations, a growing 'Yes' button, and a playful 'No' button trick.
+Una app web interactiva con estetica **glassmorphism**, pensada para enviar una pregunta de San Valentin personalizada a alguien especial. Incluye animaciones suaves, un boton de "Si" creciente y el clasico truco del boton "No".
 
-## 🎯 Features
-✅ **Glassmorphism UI** with blur effects and smooth animations  
-✅ **Interactive buttons** that resize dynamically  
-✅ **3D effects** for a visually immersive experience  
-✅ **Personalized message** with a typewriter effect  
-✅ **Mobile-friendly & responsive design**  
+## 🎯 Caracteristicas
+✅ **UI glassmorphism** con blur y animaciones suaves  
+✅ **Botones interactivos** que cambian de tamano  
+✅ **Efectos 3D** para una experiencia mas inmersiva  
+✅ **Mensaje personalizado** con efecto maquina de escribir  
+✅ **Diseno responsive y mobile-friendly**  
 
-## 🚀 Live Demo
+## 🚀 Demo en vivo
 
 <img src='/assets/Walkthrough.gif' title='Video Walkthrough' width='500px' alt='Video Walkthrough' />
 
-Once deployed, access your live project at:
+Una vez desplegado, accede a tu proyecto en vivo en:
 ```
 https://loveoh.netlify.app/
 ```
-Replace https://loveoh.netlify.app/ with your actual Netlify domain.
+Reemplaza https://loveoh.netlify.app/ con tu dominio de Netlify.
 
 ---
 
-## 🔧 Setup & Deployment
-### **1️⃣ Local Setup**
-#### **Clone the repository:**
+## 🔧 Configuracion y despliegue
+### **1️⃣ Configuracion local**
+#### **Clona el repositorio:**
 ```bash
 git clone https://github.com/2bTwist/Valentines-Day-Web-Project
 cd Valentines-Day-Web-Project
 ```
 
-#### **Open the project:**
-You can simply open `index.html` in a browser or use Live Server in VS Code.
+#### **Abre el proyecto:**
+Puedes abrir `index.html` en un navegador o usar Live Server en VS Code.
 
 ---
 
-### **2️⃣ How to Customize Your Partner's Name**
-By default, the app displays the name `JILLIAN`. You can change it in `main.js`:
+### **2️⃣ Como personalizar el nombre de tu pareja**
+Por defecto, la app muestra el nombre `JILLIAN`. Puedes cambiarlo en `main.js`:
 
-#### **Steps to edit:**
-1. Open `main.js` in a text editor.
-2. Find the following line:
+#### **Pasos para editar:**
+1. Abre `main.js` en un editor de texto.
+2. Busca la siguiente linea:
    ```js
-   let partnerName = "JILLIAN"; // Replace with your partner's name
+   let partnerName = "JILLIAN"; // Reemplaza con el nombre de tu pareja
    ```
-3. Change `JILLIAN` to your partner’s name, like this:
+3. Cambia `JILLIAN` por el nombre, por ejemplo:
    ```js
    let partnerName = "ALEX";
    ```
-4. Save the file and refresh the page to see the update.
+4. Guarda el archivo y recarga la pagina para ver el cambio.
 
 ---
 
-### **3️⃣ Deploying on Netlify**
-#### **Auto Deployment (Recommended)**
-1. Push your project to GitHub.
-2. Go to [Netlify](https://www.netlify.com/) and create an account.
-3. Click **"New site from Git"** → Select your GitHub repo.
-4. Click **Deploy**. Netlify will handle the rest!
-5. 🎉 Your site is live! Share the link with your special someone.
+### **3️⃣ Despliegue en Netlify**
+#### **Despliegue automatico (recomendado)**
+1. Sube tu proyecto a GitHub.
+2. Ve a [Netlify](https://www.netlify.com/) y crea una cuenta.
+3. Haz clic en **"New site from Git"** → Selecciona tu repo de GitHub.
+4. Haz clic en **Deploy**. Netlify se encarga del resto.
+5. 🎉 Tu sitio queda en vivo. Comparte el enlace con esa persona especial.
 
-#### **Manual Drag & Drop Deployment**
-1. Zip all your files (`index.html`, `style.css`, `main.js`, etc.).
-2. Go to [Netlify Drop](https://app.netlify.com/drop).
-3. Drag and drop your zip folder.
-4. Netlify will instantly deploy your project.
-
----
-
-### 📜 License
-This project is **open-source**. Feel free to modify and share the love! 💕
+#### **Despliegue manual (drag & drop)**
+1. Comprime todos los archivos (`index.html`, `style.css`, `main.js`, etc.).
+2. Ve a [Netlify Drop](https://app.netlify.com/drop).
+3. Arrastra y suelta tu zip.
+4. Netlify desplegara tu proyecto al instante.
 
 ---
 
-### ❤️ Connect
-If you have any questions or want to improve the project, feel free to reach out!
+### 📜 Licencia
+Este proyecto es **open-source**. Modificalo y comparte el amor. 💕
+
+---
+
+### ❤️ Contacto
+Si tienes preguntas o quieres mejorar el proyecto, escribe sin problema.
