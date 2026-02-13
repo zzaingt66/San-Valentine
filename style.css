@@ -275,6 +275,14 @@ h3 {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 }
 
+.choice-box {
+    position: relative;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .click-box button,
 .choice-box button {
     border: none;
@@ -288,6 +296,14 @@ h3 {
 
 .choice-box > button {
     margin: 5px;
+}
+
+.choice-box .no-button {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .choice-box button:first-child {
@@ -340,6 +356,38 @@ h3 {
     color: var(--color5); /* Dark gray */
     margin-top: 10px;
     display: block;
+}
+
+.no-message {
+    min-height: 1.5em;
+}
+
+.pop-burst {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.pop-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, #ff4d4d 60%, #ff1f6b 100%);
+    animation: popParticle 0.6s ease-out forwards;
+}
+
+@keyframes popParticle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(0.2);
+        opacity: 0;
+    }
 }
 @keyframes stampIn {
     0% {
